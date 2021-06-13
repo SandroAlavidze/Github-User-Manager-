@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getInfo } from "../api/detinfo";
-import { ROUTE_USER } from "../config/routes";
+import Showmore from "./Showmore";
+import PropTypes from "prop-types";
 
-function Card({ avatar, username }) {
-  const [detdata, setDetdadta] = useState([]);
+function Card({ username }) {
+  const [detaileddata, setDetdadta] = useState([]);
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     getInfo(username)
       .then((data) => setDetdadta(data))
       .catch((e) => setError(e.message));
   }, []);
-  console.log(detdata);
+
   return (
-    <div>
-      <img src={avatar}></img>
+    <div id="card">
+      {error && <h1>{error}</h1>}
+      <img src={detaileddata.avatar_url} alt="avatar" />
       <p>{username}</p>
-      <p>{detdata.followers}</p>
-      <p>{detdata.following}</p>
-      <Link to={{ pathname: `/user/${username}` }}>
-        <button>Show More</button>
-      </Link>
+      <p>{detaileddata.followers}</p>
+      <p>{detaileddata.following}</p>
+      <Showmore username={username} />
     </div>
   );
 }
+
+Card.propTypes = {
+  username: PropTypes.string.isRequired,
+};
 
 export default Card;

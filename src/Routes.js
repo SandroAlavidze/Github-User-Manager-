@@ -9,12 +9,14 @@ import {
 } from "./config/routes";
 import Dashboard from "./page/Dashboard";
 import Info from "./page/Info";
+import Login from "./page/Login";
+import Search from "./page/Search";
 
 function Routes() {
   return (
     <Switch>
       <Route path={ROUTE_MAIN} exact>
-        <h1>Login</h1>
+        <Login />
       </Route>
       <Route path={ROUTE_DASHBOARD}>
         <Dashboard />
@@ -22,12 +24,13 @@ function Routes() {
       <Route path={ROUTE_USER}>
         <Info />
       </Route>
+      <Route path={ROUTE_SEARCH}>
+        <Search />
+      </Route>
       {/* <Route path={ROUTE_FAVORITES}>
                 <Favorites />
             </Route>
-            <Route path={ROUTE_SEARCH}>
-                <Search />
-            </Route> */}
+             */}
       <Route>
         <h1>404</h1>
       </Route>

@@ -17,8 +17,10 @@ function Dashboard() {
       )
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
+    // return () => {
+    //   setPagenum(1);
+    // }
   }, [pagenum]);
-
   return (
     <div>
       <Header />
@@ -26,13 +28,8 @@ function Dashboard() {
         <Loader type="Oval" color="#00BFFF" />
       ) : (
         <>
-          <h1>ABC</h1>
           {userdata.map((user) => (
-            <Card
-              key={user.id}
-              avatar={user.avatar_url}
-              username={user.login}
-            />
+            <Card key={user.id} username={user.login} />
           ))}
           <button onClick={() => setPagenum(pagenum + 1)}>Load More</button>
         </>
