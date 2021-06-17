@@ -3,8 +3,10 @@ import Card from "../components/Card";
 import Header from "../components/Header";
 
 function Search() {
+  const [searchkeyword, setKeyword] = useState("");
   const [input, setInput] = useState("");
-  const [toggleclick, setToggle] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  // console.log(searchkeyword);
 
   return (
     <div>
@@ -15,8 +17,8 @@ function Search() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={() => setToggle(true)}>Search</button>
-      {toggleclick ? <Card username={input} /> : <></>}
+      <button onClick={() => { setKeyword(input), setClicked(!clicked) }}>Search</button>
+      {clicked && <Card username={searchkeyword} />}
     </div>
   );
 }

@@ -11,6 +11,7 @@ import Dashboard from "./page/Dashboard";
 import Info from "./page/Info";
 import Login from "./page/Login";
 import Search from "./page/Search";
+import Favorites from "./page/Favorites";
 
 function Routes() {
   return (
@@ -27,10 +28,9 @@ function Routes() {
       <Route path={ROUTE_SEARCH}>
         <Search />
       </Route>
-      {/* <Route path={ROUTE_FAVORITES}>
-                <Favorites />
-            </Route>
-             */}
+      <Route path={ROUTE_FAVORITES}>
+        <Favorites />
+      </Route>
       <Route>
         <h1>404</h1>
       </Route>

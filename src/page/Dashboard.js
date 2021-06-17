@@ -17,9 +17,6 @@ function Dashboard() {
       )
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
-    // return () => {
-    //   setPagenum(1);
-    // }
   }, [pagenum]);
   return (
     <div>

@@ -17,7 +17,7 @@ function Card({ username }) {
     <div id="card">
       {error && <h1>{error}</h1>}
       <img src={detaileddata.avatar_url} alt="avatar" />
-      <p>{username}</p>
+      <p>{detaileddata.login}</p>
       <p>{detaileddata.followers}</p>
       <p>{detaileddata.following}</p>
       <Showmore username={username} />
