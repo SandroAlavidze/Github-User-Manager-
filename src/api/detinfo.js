@@ -15,7 +15,7 @@ async function getInfo(username, additional) {
     );
     return response.data;
   } catch (err) {
-    return err.message;
+    return err.response;
   }
 }
 

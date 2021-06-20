@@ -8,7 +8,7 @@ async function getUsers(pagenum) {
     const response = await axios.get(API_URL + `&page=${pagenum}`);
     return response.data.items;
   } catch (err) {
-    return err.message;
+    return err.response;
   }
 }
 

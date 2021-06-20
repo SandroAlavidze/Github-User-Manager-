@@ -3,11 +3,13 @@ import Header from "../components/Header";
 import Loader from "react-loader-spinner";
 import { getUsers } from "../api/geninfo";
 import Card from "../components/Card";
+import { useAuth } from "../context/AuthContext";
 
 function Dashboard() {
   const [userdata, setUserdata] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pagenum, setPagenum] = useState(1);
+  const { logout } = useAuth();
 
   useEffect(() => {
     setLoading(true);
@@ -25,6 +27,7 @@ function Dashboard() {
         <Loader type="Oval" color="#00BFFF" />
       ) : (
         <>
+          <button onClick={logout}>Log Out</button>
           {userdata.map((user) => (
             <Card key={user.id} username={user.login} />
           ))}

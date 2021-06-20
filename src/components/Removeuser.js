@@ -1,22 +1,19 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import { AppContext } from '../context/AppContext'
-
+import { AppContext } from "../context/AppContext";
 
 function Removeuser({ user }) {
-    const { favorites, setFavorite } = useContext(AppContext);
+  const { favorites, setFavorite } = useContext(AppContext);
 
-    function removeFavorite() {
-        setFavorite(favorites.filter((person) => person !== user));
-    }
+  function removeFavorite() {
+    setFavorite(favorites.filter((person) => person !== user));
+  }
 
-    return (
-        <button onClick={() => removeFavorite()}>Remove</button>
-    )
+  return <button onClick={() => removeFavorite()}>Remove</button>;
 }
 
 Removeuser.propTypes = {
-    user: PropTypes.string,
+  user: PropTypes.string,
 };
 
-export default Removeuser
+export default Removeuser;

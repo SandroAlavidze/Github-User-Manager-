@@ -8,7 +8,7 @@ import { AppContext } from "../context/AppContext";
 import Removeuser from "./Removeuser";
 
 function Fullinfo({ username, avatar, followers, following, bio }) {
-  const { favorites } = useContext(AppContext)
+  const { favorites } = useContext(AppContext);
   const [orgs, setOrgs] = useState([]);
   const [repos, setRepos] = useState([]);
 
@@ -38,11 +38,11 @@ function Fullinfo({ username, avatar, followers, following, bio }) {
           <Repos key={repo.id} url={repo.html_url} name={repo.name} />
         ))}
       </div>
-      {favorites.includes(username)
-        ?
+      {favorites.includes(username) ? (
         <Removeuser user={username} />
-        :
-        <Addfavorites user={username} />}
+      ) : (
+        <Addfavorites user={username} />
+      )}
     </>
   );
 }

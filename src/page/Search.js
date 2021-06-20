@@ -17,7 +17,13 @@ function Search() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={() => { setKeyword(input), setClicked(!clicked) }}>Search</button>
+      <button
+        onClick={() => {
+          setKeyword(input), setClicked(!clicked);
+        }}
+      >
+        Search
+      </button>
       {clicked && <Card username={searchkeyword} />}
     </div>
   );

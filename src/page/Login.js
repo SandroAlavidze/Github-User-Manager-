@@ -1,11 +1,15 @@
 import React from "react";
 import Header from "../components/Header";
+import LogInForm from "../components/LogInForm";
 
-function Login() {
+function Login({ location }) {
+
+  const { state } = location;
+
   return (
     <div>
-      <h1>Login</h1>
-      <Header />
+      {state?.success && <h3>Sign Up was Successful</h3>}
+      <LogInForm />
     </div>
   );
 }
