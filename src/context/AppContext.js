@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const AppContext = createContext();
 
-function AppContextProvider({ children }) {
+function FavoritesContext({ children }) {
   const [favorites, setFavorite] = useState([]);
 
   return (
@@ -13,8 +13,8 @@ function AppContextProvider({ children }) {
   );
 }
 
-AppContextProvider.propTypes = {
+FavoritesContext.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { AppContext, AppContextProvider };
+export { AppContext, FavoritesContext };

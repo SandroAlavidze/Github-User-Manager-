@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { Button } from "@material-ui/core";
 import PropTypes from "prop-types";
 
+import { AppContext } from "../context/AppContext";
 function Addfavorites({ user }) {
-  const { favorites, setFavorite } = useContext(AppContext);
-
-  console.log(favorites);
+  const { setFavorite } = useContext(AppContext);
 
   return (
-    <button onClick={() => setFavorite((prev) => [...prev, user])}>
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={() => setFavorite((prev) => [...prev, user])}
+    >
       Add to Favorites
-    </button>
+    </Button>
   );
 }
 

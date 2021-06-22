@@ -1,14 +1,14 @@
 import React from "react";
 import Routes from "./Routes";
-import { AppContextProvider } from "./context/AppContext";
+import { FavoritesContext } from "./context/AppContext";
 import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   return (
     <AuthContextProvider>
-      <AppContextProvider>
+      <FavoritesContext>
         <Routes />
-      </AppContextProvider>
+      </FavoritesContext>
     </AuthContextProvider>
   );
 }

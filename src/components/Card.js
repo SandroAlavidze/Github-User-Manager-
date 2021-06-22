@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { Typography, Box } from "@material-ui/core";
+
 import { getInfo } from "../api/detinfo";
 import Showmore from "./Showmore";
-import PropTypes from "prop-types";
 
 function Card({ username }) {
   const [detaileddata, setDetdadta] = useState([]);
@@ -14,14 +16,21 @@ function Card({ username }) {
   }, []);
 
   return (
-    <div id="card">
+    <Box id="card">
       {error && <h1>{error}</h1>}
-      <img src={detaileddata.avatar_url} alt="avatar" />
-      <p>{detaileddata.login}</p>
-      <p>{detaileddata.followers}</p>
-      <p>{detaileddata.following}</p>
+      <img className="resize" src={detaileddata.avatar_url} alt="avatar" />
+      <Typography>
+        {" "}
+        <b>{detaileddata.login}</b>
+      </Typography>
+      <Typography>
+        <span>Followers: </span> {detaileddata.followers}
+      </Typography>
+      <Typography>
+        <span>Following: </span> {detaileddata.following}
+      </Typography>
       <Showmore username={username} />
-    </div>
+    </Box>
   );
 }
 

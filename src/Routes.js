@@ -20,16 +20,62 @@ import GuestGuard from "./components/GuestGuard";
 function Routes() {
   return (
     <Switch>
-      <Route path={ROUTE_MAIN} exact render={(props) => <GuestGuard><Login {...props} /></GuestGuard>} />
-      <Route path={ROUTE_SIGNUP} render={() => <GuestGuard><Signup /></GuestGuard>} />
-      <Route path={ROUTE_DASHBOARD} render={() => <AuthGuard><Dashboard /></AuthGuard>} />
-      <Route path={ROUTE_USER} render={() => <AuthGuard> <Info /></AuthGuard>} />
-      <Route path={ROUTE_SEARCH} render={() => <AuthGuard> <Search /></AuthGuard>} />
-      <Route path={ROUTE_FAVORITES} render={() => <AuthGuard> <Favorites /></AuthGuard>} />
+      <Route
+        path={ROUTE_MAIN}
+        exact
+        render={(props) => (
+          <GuestGuard>
+            <Login {...props} />
+          </GuestGuard>
+        )}
+      />
+      <Route
+        path={ROUTE_SIGNUP}
+        render={() => (
+          <GuestGuard>
+            <Signup />
+          </GuestGuard>
+        )}
+      />
+      <Route
+        path={ROUTE_DASHBOARD}
+        render={() => (
+          <AuthGuard>
+            <Dashboard />
+          </AuthGuard>
+        )}
+      />
+      <Route
+        path={ROUTE_USER}
+        render={() => (
+          <AuthGuard>
+            {" "}
+            <Info />
+          </AuthGuard>
+        )}
+      />
+      <Route
+        path={ROUTE_SEARCH}
+        render={() => (
+          <AuthGuard>
+            {" "}
+            <Search />
+          </AuthGuard>
+        )}
+      />
+      <Route
+        path={ROUTE_FAVORITES}
+        render={() => (
+          <AuthGuard>
+            {" "}
+            <Favorites />
+          </AuthGuard>
+        )}
+      />
       <Route>
         <h1>404</h1>
       </Route>
-    </Switch >
+    </Switch>
   );
 }
 

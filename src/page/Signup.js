@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import RegistrationForm from "../components/Registrationform";
+import React from "react";
+import RegistrationForm from "../components/RegistrationForm";
 
 function Signup() {
   return (
-    <div>
-      <h1>Signup</h1>
+    <div id="signup">
       <RegistrationForm />
     </div>
   );

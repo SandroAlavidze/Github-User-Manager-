@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 function Orgs({ name, url, avatar }) {
+  const modified_url = useRef("");
+
+  useEffect(() => {
+    modified_url.current = url.replace("api.", "");
+  }, []);
+
   return (
     <div>
-      <a href={url} target="_blank">
+      <a href={modified_url.current} target="_blank" rel="noreferrer">
         <img src={avatar} alt={name} />
       </a>
     </div>

@@ -1,0 +1,154 @@
+html, body, #root, #root>div {
+    height: 100%
+}
+
+#login{
+    display: flex;
+    justify-content: center;
+}
+
+#root #login-form{
+    margin-top: 2em;
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #1976d2;
+    height: 120px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    justify-content: space-between;
+    align-items:center;
+  }
+  
+  header .logo-heading {
+    flex-basis: 25%;
+  }
+  
+  nav {
+    flex-basis: 25%;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  nav ul li a.active {
+    border-bottom: 0.18rem solid;
+    border-color: black;
+  }
+#dashboard{
+    text-align: center;
+}
+  #cards{   
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+
+  #cards #card {
+    flex-basis: 20%;
+    padding: 0.7rem;
+    border: 0.1rem solid;
+    border-color: black;
+    border-radius: 0.3rem;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 30rem;
+  }
+
+  .resize {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  #card{
+      font-size: large;
+  }
+
+  #load-more{
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+  }
+
+  #full-info-page{
+    text-align: center;
+  }
+
+  #general-profile{
+      margin-top: 2em;
+      display: flex;
+      justify-content: space-evenly;
+      font-size: large;
+      align-items: center;
+  }
+
+  #general-profile div{
+      text-align: center;
+  }
+
+  #general-profile img{
+    width: 350px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  #organizations img{
+      width: 100px;
+  }
+
+  #searchbar{
+      margin-top: 1.5em;
+  }
+
+  #search-page #card{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+#modal{
+  position: fixed;
+  left: 0;
+  right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal:empty {
+    display: none;
+  }
+
+#modal #favorite-buttons{
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+} 
